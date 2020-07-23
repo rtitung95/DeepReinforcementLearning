@@ -23,7 +23,7 @@ The task is episodic, and in order to solve the environment, your agents must ge
 
 The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
 
-## instructions
+## Instructions
 To set up your python environment to run the code in this repository, follow the instructions below.
 
 1. Clone the repository.
@@ -61,7 +61,7 @@ jupyter notebook
 ```
 
 
-6. Navigate to the `Tennis.ipynb` file and open it. But be careful to change the `file_name` as per the location of your environment.
+5. Navigate to the `Tennis.ipynb` file and open it. But be careful to change the `file_name` as per the location of your environment.
 
 ![Kernel](./Images/env.png)
 
