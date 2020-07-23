@@ -143,6 +143,7 @@ def main():
 
         # update once after every episode_per_update
         if len(buffer) > batchsize and episode % episode_per_update < parallel_envs:
+            # loop for each agent
             for a_i in range(3):
                 samples = buffer.sample(batchsize)
                 maddpg.update(samples, a_i, logger)
@@ -168,7 +169,6 @@ def main():
         save_dict_list = []
         if save_info:
             for i in range(3):
-
                 save_dict = {'actor_params': maddpg.maddpg_agent[i].actor.state_dict(),
                              'actor_optim_params': maddpg.maddpg_agent[i].actor_optimizer.state_dict(),
                              'critic_params': maddpg.maddpg_agent[i].critic.state_dict(),

@@ -16,6 +16,7 @@ def transpose_to_tensor(input_list):
 
 
 # https://github.com/ikostrikov/pytorch-ddpg-naf/blob/master/ddpg.py#L11
+# TODO change here too
 def soft_update(target, source, tau):
     """
     Perform DDPG soft update (move target params toward source based on weight

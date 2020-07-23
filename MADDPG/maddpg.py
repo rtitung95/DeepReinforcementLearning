@@ -62,6 +62,7 @@ class MADDPG:
 
         agent = self.maddpg_agent[agent_number]
         agent.critic_optimizer.zero_grad()
+        # ---------------------------- update critic ---------------------- #
 
         # critic loss = batch mean of (y- Q(s,a) from target network)^2
         # from target network
@@ -87,6 +88,7 @@ class MADDPG:
         # torch.nn.utils.clip_grad_norm_(agent.critic.parameters(), 0.5)
         agent.critic_optimizer.step()
 
+        # ---------------------------- update actor ------------------------- #
         # update actor network using policy gradient
         agent.actor_optimizer.zero_grad()
         # make input to agent
