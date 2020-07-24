@@ -100,6 +100,7 @@ class Agent():
         return np.clip(action, -1, 1)
 
     def reset(self):
+        """Reset the internal state of noise mean(mu)"""
         self.noise.reset()
 
     def learn(self, experiences, gamma):
