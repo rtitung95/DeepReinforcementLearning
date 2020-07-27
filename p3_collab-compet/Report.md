@@ -13,9 +13,12 @@ For this project, I used the same `MADDPG` algorithm developed by OpenAI in 2017
 The given table tennis environment consists of two agents. These two agents are opponents and they might need to compete against each other in certain conditions such as gathering as much points as possible and they might need to collaborate with each other in certain conditions like not letting the ball hit the ground. And unfortunately, the traditional reinforcement learning approaches such as Q-Learning and policy gradient approaches doesn't work well in these conditions. This is mainly because each agent's policy is changing as training progresses and the environment becomes non-stationary from the perspective of any individual agent. And this leads to learning stability problem and straightforward use of experiences replay for Q-learning approaches. And additional, the variance problem is highly significant as the number of collaborating agent increases.
 
 The above paper suggests a framework of centralized training with decentralized execution by allowing the policies to use extra information to ease training but doesn't use the information during testing. It is difficult to do this with Q-Learning approaches with out making much more assumptions. So, a simple extension of actor-critic policy gradient method is suggested as it requires minimum changes. Here the critic has full access to the policy and observations of other agents as well during training while the critic has access to the local information only.And after the training  is completed, the local actors are only used at execution phase acting in decentralized manner. The process is shown in the following gif.
-![MADDPG](./Images/maddpg.gif)
-**Figure:** Overview of our multi-agent decentralized actor, centralized critic approach <br/>
-**Source:** [Learning to Cooperate, Compete, and Communicate](https://openai.com/blog/learning-to-cooperate-compete-and-communicate/)
+<!-- ![MADDPG](./Images/maddpg.gif) -->
+<p align="center">
+  <img width="460" height="300" src="./Images/maddpg.gif"><br/>
+  **Figure:** Overview of our multi-agent decentralized actor, centralized critic approach <br/>
+  **Source:** [Learning to Cooperate, Compete, and Communicate](https://openai.com/blog/learning-to-cooperate-compete-and-communicate/)
+</p>
 
 ### Model Architecture
 The main network behind the MADDPG is actor-critic network as well. MADDPG uses exactly `n` number of DDPG agents where n is the number of agents in the environment. In our case, its two. And each DDPG agent has two actor networks and two critic networks(local and critic).

@@ -42,8 +42,8 @@ UPDATE_EVERY = 20       # how often to update the network
 N_UPDATES = 10          # how many times to update the netwok
 ```
 ## Plot of Rewards
-The graph below shows average rewards over the period of 100 episodes. The DDPG network was able to attain 30.0+ average rewards at only just 157 episodes.
+The graph below shows average rewards over the period of 100 episodes. The DDPG network was able to attain 30.0+ average rewards at only just 157 episodes.<br/>
 ![avg_reward](./Images/avg_reward.png)
 
 ## Ideas for Future Work
-This problem is one of the hardest to tune. So, some addition to this approach or even other algorithms may help to attain better and uniform results. One of the changes can be adding `Prioritized Experience Replay(PER)` instead of `Experience Replay` only. Here since we have 1 million buffer size and we are considering 128 samples per batch so if we could get relevant experiences at each sample, the model's performance may highly improve and be less sensitive to change in hyperparameters as it is now. We could also explore other Actor-critic methods like PPO and A3C. 
+This problem is one of the hardest to tune. So, some addition to this approach or even other algorithms may help to attain better and uniform results. One of the changes can be adding `Prioritized Experience Replay(PER)` instead of `Experience Replay` only. Here since we have 1 million buffer size and we are considering 128 samples per batch so if we could get relevant experiences at each sample, the model's performance may highly improve and be less sensitive to change in hyperparameters as it is now. We could also explore other Actor-critic methods like PPO and A3C.
